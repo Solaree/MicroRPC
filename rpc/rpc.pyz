@@ -1,4 +1,4 @@
-# rpc.py
+# rpc.pyz
 
 import os, sys, time
 from pypresence import *
@@ -82,13 +82,10 @@ class MicroRPC(MicroRPCDefs):
         self.rpc.update(
             small_text=self.micro,
             small_image=self.micro_logo,
-
             large_text=self.file_extention,
             large_image=self.logo,
-
             details=self.filename,
             state=f"{self.time_count // 3600:02d}:{(self.time_count % 3600) // 60:02d}:{self.time_count % 60:02d} elapsed",
-
             buttons=[{"label": "Page", "url": "https://solardev.gq"}]
         )
 
@@ -107,4 +104,4 @@ if __name__ == "__main__":
         filename = sys.argv[1]
         MicroRPC(filename)
     else:
-        print("usage: rpc.py <filename>")
+        print("usage: rpc.pyz <filename>")
