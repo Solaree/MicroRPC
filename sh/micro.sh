@@ -1,14 +1,10 @@
 #!/bin/bash
 
-function on_micro_exit() {
-   killall python3
-}
-
-trap 'on_micro_exit "$@"' EXIT
-micro "$@" </dev/null >/dev/null 2>&1 &
+trap 'killall python3' EXIT
+/usr/bin/micro "$@" </dev/null >/dev/null 2>&1 &
 
 MICRO_PID=$!
 sleep 0.5
 
-python3 ~/.config/micro/plug/MicroRPC/rpc/rpc.pyz "$@" &
+python3 $HOME/.config/micro/plug/MicroRPC/rpc.py "$@" &
 wait $MICRO_PID
