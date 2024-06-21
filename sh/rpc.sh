@@ -1,6 +1,6 @@
 sudo apt -y update && sudo apt -y upgrade
 sudo apt -y install python3 python3-pip
-pip install pypresence colorama
+sudo pip install pypresence colorama
 
 sudo chmod +x ./micro.sh
 sudo cp ./micro.sh /usr/local/bin/micro
